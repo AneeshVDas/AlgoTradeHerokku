@@ -67,7 +67,7 @@ deployRouter.get("/execute/:id", function (req, res) {
       } else {
         console.log("execution engine call");
         console.log(strategy.strategy);
-        new Object(execution_engine(strategy.strategy,res));
+        let newExeEngine = execution_engine(strategy.strategy,res);
 
         console.log("execution engine called");
         //res.status(200).json(strategy.strategy);
