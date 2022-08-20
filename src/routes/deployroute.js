@@ -39,7 +39,7 @@ deployRouter.get("/exit", function (req, res) {
  //deployRouter.get("/:id", verifyToken, function(req,res){
 deployRouter.get("/execute/:id", function (req, res) {
     exitRoute = 0;
-    apiError = 0;
+    stopSSE = 0;
   const headers = {
     "Content-Type": "text/event-stream",
     Connection: "keep-alive",
@@ -67,7 +67,7 @@ deployRouter.get("/execute/:id", function (req, res) {
       } else {
         console.log("execution engine call");
         console.log(strategy.strategy);
-        let newExeEngine = execution_engine(strategy.strategy,res);
+        new Object(execution_engine(strategy.strategy,res));
 
         console.log("execution engine called");
         //res.status(200).json(strategy.strategy);
